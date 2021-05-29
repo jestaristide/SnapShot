@@ -4,14 +4,20 @@
   "private": true,
   "homepage": "https://Yog9.github.io/SnapShot",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-modal": "^3.13.1",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "reactjs-popup": "^2.0.4",
+    "redux": "^4.1.0"
   },
   "scripts": {
     "predeploy": "npm run build",

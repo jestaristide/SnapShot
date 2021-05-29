@@ -1,11 +1,36 @@
 import React, { createContext, useState } from "react";
 import axios from "axios";
 import { apiKey } from "../api/config";
+import { useDispatch } from "react-redux";
+import {addBeach, addBird, addFood, addMountain, addSearch} from "../features/slice/mountainSlice"
 export const PhotoContext = createContext();
+
 
 const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const dispatch = useDispatch();
+  const dispatchDepentQuery = (query, values) => {
+    switch(query) {
+      case 'beach':
+        dispatch(addBeach(values))
+        break
+      case 'bird':
+        dispatch(addBird(values))
+        break
+      case 'food':
+        dispatch(addFood(values))
+        break
+      case 'mountain':
+        dispatch(addMountain(values))
+        break
+      default:
+        dispatch(addSearch(values))
+        break;
+        
+    }
+  }
   const runSearch = query => {
     axios
       .get(
@@ -13,6 +38,7 @@ const PhotoContextProvider = props => {
       )
       .then(response => {
         setImages(response.data.photos.photo);
+        dispatchDepentQuery(query, response.data.photos.photo)
         setLoading(false);
       })
       .catch(error => {

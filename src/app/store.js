@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mountainReducer from '../features/slice/mountainSlice';
+import photoReducer from '../features/slice/photoSlice';
 
 export default configureStore({
   reducer: {
-    mountain: mountainReducer,
+    photos: photoReducer,
   },
 });

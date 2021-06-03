@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import axios from "axios";
 import { apiKey } from "../api/config";
 import { useDispatch } from "react-redux";
-import {addBeach, addBird, addFood, addMountain, addSearch} from "../features/slice/mountainSlice"
+import {addBeach, addBird, addFood, addMountain, addSearch} from "../features/slice/photoSlice"
 export const PhotoContext = createContext();
 
 

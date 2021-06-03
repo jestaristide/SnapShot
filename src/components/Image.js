@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {loadImage} from "../features/slice/mountainSlice"
+import {loadImage} from "../features/slice/photoSlice"
 
 const Image = ({ url, title , image}) => {
   const dispatch = useDispatch();
